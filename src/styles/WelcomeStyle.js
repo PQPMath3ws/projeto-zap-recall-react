@@ -1,13 +1,6 @@
-import styled, { keyframes } from "styled-components";
+import styled from "styled-components";
 
-const fadeAnimation = keyframes`
-    0% {
-        opacity: 0;
-    }
-    100% {
-        opacity: 1;
-    }
-`;
+import Animations from "../const/Animations";
 
 const WelcomeStyle = {
     WelcomeDiv: styled.div`
@@ -18,11 +11,12 @@ const WelcomeStyle = {
         -o-transform: translate(-50%, -50%);
         -ms-transform: translate(-50%, -50%);
         -moz-transform: translate(-50%, -50%);
-        animation-name: ${fadeAnimation};
+        text-align: center;
+        opacity: ${props => props.isStartingComponent ? 1 : 0};
+        animation-name: ${props => props.isStartingComponent ? Animations.fadeInAnimation : Animations.fadeOutAnimation};
         animation-duration: 0.6s;
         animation-timing-function: linear;
-        text-align: center;
-        animation-direction: ${props => props.isStartingComponent ? "normal" : "reverse"};
+        animation-direction: normal;
     `,
     LogoImage: styled.img`
         width: 70%;
