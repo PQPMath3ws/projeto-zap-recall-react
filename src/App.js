@@ -1,6 +1,7 @@
 import { useState } from "react";
 
 import Welcome from "./components/Welcome";
+import Questions from "./components/Questions";
 
 const App = () => {
     const [isStartingComponent, setIsStartingComponent] = useState([true, false]);
@@ -15,6 +16,7 @@ const App = () => {
     return (
         <>
             <Welcome isStartingComponent={isStartingComponent[0]} startApp={startApp}></Welcome>
+            <Questions isStartingComponent={isStartingComponent[1]}></Questions>
         </>
     );
 }
