@@ -1,6 +1,6 @@
-import WelcomeStyle from "../styles/WelcomeStyle";
-
 import logo from "../images/logo.png";
+
+import WelcomeStyle from "../styles/WelcomeStyle";
 
 const Welcome = (props) => (
     <WelcomeStyle.WelcomeDiv isStartingComponent={props.isStartingComponent}>
