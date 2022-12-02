@@ -15,7 +15,7 @@ const QuestionsStyle = {
     `,
     HeaderDiv: styled.div`
         top: 50px;
-        position: absolute;
+        position: fixed;
         display: flex;
         flex-direction: row;
         align-items: center;
@@ -34,8 +34,18 @@ const QuestionsStyle = {
         color: #FFFFFF;
         transform: rotate(0.58deg);
     `,
+    Questions: styled.div`
+        top: 140px;
+        position: fixed;
+        height: calc(100% - 200px);
+        left: 50%;
+        margin-left: -170px;
+        width: 100%;
+        overflow-y: scroll;
+
+    `,
     StatusDiv: styled.div`
-        position: absolute;
+        position: fixed;
         display: flex;
         flex-direction: column;
         justify-content: center;
