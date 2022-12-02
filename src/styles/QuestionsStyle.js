@@ -39,10 +39,9 @@ const QuestionsStyle = {
         position: fixed;
         height: calc(100% - 200px);
         left: 50%;
-        margin-left: -170px;
+        margin-left: -25%;
         width: 100%;
         overflow-y: scroll;
-
     `,
     StatusDiv: styled.div`
         position: fixed;

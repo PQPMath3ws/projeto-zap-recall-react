@@ -13,11 +13,11 @@ const Questions = (props) => (
             <QuestionsStyle.ZapRecallText>ZapRecall</QuestionsStyle.ZapRecallText>
         </QuestionsStyle.HeaderDiv>
         <QuestionsStyle.Questions>
-            {Cards.map((card, index) => <Question questionNumber={index + 1}></Question>)}
+            {Cards.map((card, index) => <Question card={card} questionNumber={index + 1}></Question>)}
         </QuestionsStyle.Questions>
         <QuestionsStyle.StatusDiv>
             <QuestionsStyle.StatusText>
-                0/4 CONCLUÍDOS
+                0/{Cards.length} CONCLUÍDOS
             </QuestionsStyle.StatusText>
         </QuestionsStyle.StatusDiv>
     </QuestionsStyle.QuestionsDiv>
