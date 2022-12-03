@@ -9,8 +9,16 @@ import seta_play from "../images/seta_play.png";
 import seta_virar from "../images/seta_virar.png";
 
 const Question = (props) => {
+    const [canNormalize, setCanNormalize] = useState(true);
     const [clickedStep, setClickedStep] = useState(0);
     const [canChange, setCanChange] = useState([false, false, false]);
+
+    function normalizeCards() {
+        let cards = [...props.cards];
+        cards.forEach(card => delete card.result);
+        props.setCards(cards);
+        setCanNormalize(false);
+    }
 
     function flipCardClick() {
         setClickedStep(clickedStep + 1);
@@ -24,6 +32,7 @@ const Question = (props) => {
     }
 
     useEffect(() => {
+        if (clickedStep === 0 && canNormalize) normalizeCards();
         if (clickedStep === 1)  {
             setTimeout(() => setCanChange([true, false, false]), 400);
         }

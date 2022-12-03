@@ -62,6 +62,16 @@ const QuestionsStyle = {
         font-size: 18px;
         color: #333333;
     `,
+    StatusImagesDiv: styled.div`
+        margin-top: 6px;
+        display: flex;
+        justify-content: center;
+        gap: 10px;
+    `,
+    StatusImage: styled.img`
+        width: 23px;
+        height: 23px;
+    `
 };
 
 export default QuestionsStyle;
