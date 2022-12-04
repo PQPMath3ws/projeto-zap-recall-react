@@ -30,6 +30,14 @@ const Animations = {
             scale: 1;
             transform: rotateY(180deg);
         }
+    `,
+    StatusHeightAnim: keyframes`
+        0% {
+            height: 70px;
+        }
+        100% {
+            height: 171px;
+        }
     `
 };
 

@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 
 import Animations from "../const/Animations";
 
@@ -37,7 +37,7 @@ const QuestionsStyle = {
     Questions: styled.div`
         top: 140px;
         position: fixed;
-        height: calc(100% - 200px);
+        ${props => props.answeredQuestions === props.totalQuestions ? "height: calc(100% - 310px);" : "height: calc(100% - 210px);"}
         left: 50%;
         margin-left: -25%;
         width: 100%;
@@ -51,9 +51,42 @@ const QuestionsStyle = {
         align-content: center;
         bottom: 0;
         width: 100%;
-        height: 70px;
+        ${props => props.answeredQuestions === props.totalQuestions ? "height: 171px;" : "height: 70px;"}
+        ${props => props.answeredQuestions === props.totalQuestions ? css`animation: ${Animations.StatusHeightAnim} 0.6s linear normal;` : ""}
         background-color: #FFFFFF;
         box-shadow: 0px -4px 6px rgba(0, 0, 0, 0.05);
+    `,
+    StatusDivContent: styled.div`
+        ${props => props.answeredQuestions === props.totalQuestions ? css`animation: ${Animations.fadeInAnimation} 2.0s linear normal;` : ""}
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+    `,
+    FinalStatusMessageDiv: styled.div`
+        display: flex;
+        justify-content: center;
+    `,
+    FinalStatusMessageDivImage: styled.img`
+        width: 23px;
+        height: 23px;
+    `,
+    FinalStatusMessageDivP: styled.p`
+        font-family: 'Recursive';
+        font-style: normal;
+        font-weight: 700;
+        font-size: 18px;
+        color: #333333;
+        margin-left: 14px;
+    `,
+    FinalStatusMessage: styled.p`
+        width: 222px;
+        font-family: 'Recursive';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 18px;
+        color: #333333;
+        padding-top: 16px;
+        padding-bottom: 16px;
     `,
     StatusText: styled.p`
         font-family: 'Recursive';
@@ -63,7 +96,7 @@ const QuestionsStyle = {
         color: #333333;
     `,
     StatusImagesDiv: styled.div`
-        margin-top: 6px;
+        margin-top: 8px;
         display: flex;
         justify-content: center;
         gap: 10px;
@@ -71,7 +104,7 @@ const QuestionsStyle = {
     StatusImage: styled.img`
         width: 23px;
         height: 23px;
-    `
+    `,
 };
 
 export default QuestionsStyle;
