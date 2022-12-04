@@ -47,23 +47,23 @@ const Question = (props) => {
     });
 
     return (
-        <QuestionStyle.QuestionDiv clickedStep={clickedStep}>
+        <QuestionStyle.QuestionDiv clickedStep={clickedStep} data-test="flashcard">
             {!canChange[0] ? <QuestionStyle.ContentDiv clickedStep={clickedStep}>
-                <QuestionStyle.QuestionText>Pergunta {props.questionNumber}</QuestionStyle.QuestionText>
-                <QuestionStyle.QuestionPlayImage src={seta_play} alt="" onClick={clickedStep === 0 ? () => flipCardClick() : null}></QuestionStyle.QuestionPlayImage>
+                <QuestionStyle.QuestionText data-test="flashcard-text">Pergunta {props.questionNumber}</QuestionStyle.QuestionText>
+                <QuestionStyle.QuestionPlayImage src={seta_play} alt="" onClick={clickedStep === 0 ? () => flipCardClick() : null} data-test="play-btn"></QuestionStyle.QuestionPlayImage>
             </QuestionStyle.ContentDiv> : !canChange[1] ? <QuestionStyle.ContentDiv clickedStep={clickedStep}>
-                <QuestionStyle.QuestionRevealedText>{props.card.question}</QuestionStyle.QuestionRevealedText>
-                <QuestionStyle.QuestionRotateImage src={seta_virar} alt="" onClick={clickedStep === 1 ? () => flipCardClick() : null}></QuestionStyle.QuestionRotateImage>
+                <QuestionStyle.QuestionRevealedText data-test="flashcard-text">{props.card.question}</QuestionStyle.QuestionRevealedText>
+                <QuestionStyle.QuestionRotateImage src={seta_virar} alt="" onClick={clickedStep === 1 ? () => flipCardClick() : null} data-test="turn-btn"></QuestionStyle.QuestionRotateImage>
             </QuestionStyle.ContentDiv> : !canChange[2] ? <QuestionStyle.ContentDiv clickedStep={clickedStep}>
-                <QuestionStyle.AnswerRevealedText>{props.card.answer}</QuestionStyle.AnswerRevealedText>
+                <QuestionStyle.AnswerRevealedText data-test="flashcard-text">{props.card.answer}</QuestionStyle.AnswerRevealedText>
                 <QuestionStyle.AlternativesDiv>
-                    <QuestionStyle.WrongButton onClick={() => setQuestionStatus("wrong")}>Não lembrei</QuestionStyle.WrongButton>
-                    <QuestionStyle.DoubtButton onClick={() => setQuestionStatus("almost")}>Quase não lembrei</QuestionStyle.DoubtButton>
-                    <QuestionStyle.CorrectButton onClick={() => setQuestionStatus("correct")}>Zap!</QuestionStyle.CorrectButton>
+                    <QuestionStyle.WrongButton onClick={() => setQuestionStatus("wrong")} data-test="no-btn">Não lembrei</QuestionStyle.WrongButton>
+                    <QuestionStyle.DoubtButton onClick={() => setQuestionStatus("almost")} data-test="partial-btn">Quase não lembrei</QuestionStyle.DoubtButton>
+                    <QuestionStyle.CorrectButton onClick={() => setQuestionStatus("correct")} data-test="zap-btn">Zap!</QuestionStyle.CorrectButton>
                 </QuestionStyle.AlternativesDiv>
             </QuestionStyle.ContentDiv> : <QuestionStyle.ContentDiv clickedStep={clickedStep}>
-                <QuestionStyle.QuestionText status={props.card.result}>Pergunta {props.questionNumber}</QuestionStyle.QuestionText>
-                <QuestionStyle.QuestionStatusImage src={props.card.result === "wrong" ? icone_erro : props.card.result === "almost" ? icone_quase : icone_certo} alt=""></QuestionStyle.QuestionStatusImage>
+                <QuestionStyle.QuestionText status={props.card.result} data-test="flashcard-text">Pergunta {props.questionNumber}</QuestionStyle.QuestionText>
+                <QuestionStyle.QuestionStatusImage src={props.card.result === "wrong" ? icone_erro : props.card.result === "almost" ? icone_quase : icone_certo} alt="" data-test={props.card.result === "wrong" ? "no-icon" : props.card.result === "almost" ? "partial-icon" : "zap-icon"}></QuestionStyle.QuestionStatusImage>
             </QuestionStyle.ContentDiv>}
         </QuestionStyle.QuestionDiv>
     );

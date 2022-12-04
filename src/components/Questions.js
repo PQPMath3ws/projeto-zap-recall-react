@@ -26,7 +26,7 @@ const Questions = (props) => {
                 {cards.map((card, index) => <Question card={card} cards={cards} setCards={setCards} index={index} questionNumber={index + 1}></Question>)}
             </QuestionsStyle.Questions>
             <QuestionsStyle.StatusDiv answeredQuestions={cards.filter(card => card.result).length} totalQuestions={cards.length}>
-                <QuestionsStyle.StatusDivContent answeredQuestions={cards.filter(card => card.result).length} totalQuestions={cards.length}>
+                <QuestionsStyle.StatusDivContent answeredQuestions={cards.filter(card => card.result).length} totalQuestions={cards.length} data-test="finish-text">
                     {cards.length === cards.filter(card => card.result).length ? <>
                         {cards.filter(card => card.result === "wrong").length > 0 ? <>
                             <QuestionsStyle.FinalStatusMessageDiv>
@@ -46,11 +46,11 @@ const Questions = (props) => {
                             </QuestionsStyle.FinalStatusMessage>
                         </>}
                     </> : null}
-                    <QuestionsStyle.StatusText>
+                    <QuestionsStyle.StatusText data-test="footer">
                         {cards.filter(card => card.result).length}/{cards.length} CONCLUÍDOS
                     </QuestionsStyle.StatusText>
                     {cards.filter(card => card.result).length > 0 ? <QuestionsStyle.StatusImagesDiv>
-                        {cards.filter(card => card.result).map(question => <QuestionsStyle.StatusImage src={question.result === "wrong" ? icone_erro : question.result === "almost" ? icone_quase : icone_certo} alt=""></QuestionsStyle.StatusImage>)}
+                        {cards.filter(card => card.result).map(question => <QuestionsStyle.StatusImage src={question.result === "wrong" ? icone_erro : question.result === "almost" ? icone_quase : icone_certo} alt="" data-test={question.result === "wrong" ? "no-icon" : question.result === "almost" ? "partial-icon" : "zap-icon"}></QuestionsStyle.StatusImage>)}
                     </QuestionsStyle.StatusImagesDiv> : null}
                 </QuestionsStyle.StatusDivContent>
             </QuestionsStyle.StatusDiv>
