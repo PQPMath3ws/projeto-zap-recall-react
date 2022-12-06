@@ -39,7 +39,7 @@ const QuestionsStyle = {
         position: fixed;
         ${props => props.answeredQuestions === props.totalQuestions ? "height: calc(100% - 310px);" : "height: calc(100% - 210px);"}
         left: 50%;
-        margin-left: -25%;
+        transform: translateX(-38%);
         width: 100%;
         overflow-y: scroll;
     `,
