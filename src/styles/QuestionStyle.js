@@ -17,7 +17,7 @@ const QuestionStyle = {
         ${props => props.clickedStep === 2 || props.clickedStep === 4 ? css`animation: ${Animations.fadeOutAnimation} 1s linear normal;` : ""}
     `,
     QuestionDiv: styled.div`
-        width: 50%;
+        width: 75%;
         height: auto;
         position: relative;
         background-color: #FFFFFF;
