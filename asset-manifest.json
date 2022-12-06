@@ -1,12 +1,12 @@
 {
   "files": {
-    "main.js": "/projeto-zap-recall-react/static/js/main.a62f8acd.js",
+    "main.js": "/projeto-zap-recall-react/static/js/main.ca0cdc2d.js",
     "static/js/787.1dbc34c6.chunk.js": "/projeto-zap-recall-react/static/js/787.1dbc34c6.chunk.js",
     "index.html": "/projeto-zap-recall-react/index.html",
-    "main.a62f8acd.js.map": "/projeto-zap-recall-react/static/js/main.a62f8acd.js.map",
+    "main.ca0cdc2d.js.map": "/projeto-zap-recall-react/static/js/main.ca0cdc2d.js.map",
     "787.1dbc34c6.chunk.js.map": "/projeto-zap-recall-react/static/js/787.1dbc34c6.chunk.js.map"
   },
   "entrypoints": [
-    "static/js/main.a62f8acd.js"
+    "static/js/main.ca0cdc2d.js"
   ]
 }
